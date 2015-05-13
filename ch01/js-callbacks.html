@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+
+    <body id="main">
+	<script>
+            var main = document.getElementById('main');
+             	
+	    var log = [];
+	    log.push('<pre>');
+
+	    log.push(test());
+	    function test(){
+		return "test";
+	    }
+
+	    function waitForSomething(callBack){
+	        var result = 1+2;
+		//do any thing you need here ...
+		//finish doing something, call the function callback
+		callBack(result);
+	    }
+
+	    waitForSomething(function(someText){
+		log.push(someText);
+	    });
+
+	    log.push('<pre>');
+
+	    main.innerHTML = log.join('<br>');
+	</script>
+    </body>
+</html>
